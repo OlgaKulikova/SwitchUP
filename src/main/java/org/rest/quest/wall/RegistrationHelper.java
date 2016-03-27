@@ -15,14 +15,14 @@ public class RegistrationHelper {
     public static final Logger logger = Logger.getLogger(RegistrationHelper.class.getSimpleName());
 
 
-    public void registerTeam(String hostUrl, String teamName, String teamMotto){
+    public void registerTeam(String hostUrl, String teamName, String teamMotto, java.util.List members){
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
         Team team =new Team();
         team.setName(teamName);
         team.setMotto(teamMotto);
-        //team.setMembers(members);
+        team.setMembers(members);
 
         MessageWrapper registrationMessageWrapper = restTemplate.postForObject(hostUrl + "/teams", team, MessageWrapper.class);
         logger.info("received response: " + registrationMessageWrapper.getMessage());

@@ -20,7 +20,7 @@ public class RestClientApplication {
 
         //registrationHelper
         RegistrationHelper registrationHelper = new RegistrationHelper();
-        registrationHelper.registerTeam(HOST_URL, "SwitchUP", "Everyone can Switch");
+        registrationHelper.registerTeam(HOST_URL, "SwitchUP", "Everyone can Switch", "");
 
 //        //1st wall
 //        String keyword = new MottoHelper().getKeyword(HOST_URL, null, <your team id>, 0, 221);
