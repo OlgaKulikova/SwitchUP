@@ -4,12 +4,13 @@ import org.rest.quest.service.PuzzleService;
 import org.rest.quest.wall.*;
 
 import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.logging.Logger;
 
 public class RestClientApplication {
 
     private static final Logger logger = Logger.getLogger(RestClientApplication.class.getSimpleName());
-    private static String HOST_URL = "http://localhost:8080/";
+    private static String HOST_URL = "http://192.168.88.64:8080";
 
     public static void main(String[] args) throws UnknownHostException {
 
@@ -20,7 +21,7 @@ public class RestClientApplication {
 
         //registrationHelper
         RegistrationHelper registrationHelper = new RegistrationHelper();
-        registrationHelper.registerTeam(HOST_URL, "SwitchUP", "Everyone can Switch", "");
+        registrationHelper.registerTeam(HOST_URL, "SwitchUP", "Everyone can Switch", Arrays.asList("Olga", "Roman", "Anatoliy", "Roman"));
 
 //        //1st wall
 //        String keyword = new MottoHelper().getKeyword(HOST_URL, null, <your team id>, 0, 221);
